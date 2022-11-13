@@ -1,0 +1,31 @@
+<?php
+
+$data =  $block->getActivities();
+$count=count($data);
+if(is_array($data)  && $count > 0):?>
+
+
+<script type="text/javascript">
+    function activityStream(){
+        var data = Array();
+        <?php for($i=0; $i< $count; $i++):?>
+        data[<?php echo ($i+1)?>] = '<?php echo $this->escapeJsQuote($data[$i])?>';
+        <?php endfor;?>
+        var no=Math.floor((Math.random()*<?php echo $count?>)+1)
+        jQuery.notify({
+            inline: true,
+            html: data[no],
+            close: '<a href="javascript:void(0)"><span>x</span></a>'
+        },
+            <?php echo $this->helper('PL\Activitystream\Helper\Data')->getTimeDisplay()?>
+        );
+
+        setTimeout("activityStream()",<?php echo $this->helper('PL\Activitystream\Helper\Data')->getTimeDelay()?>)
+    }
+
+    jQuery(document).ready(function () {
+        setTimeout("activityStream()",<?php echo $this->helper('PL\Activitystream\Helper\Data')->getFirstTime()?>);
+    })
+
+</script>
+<?php endif;?>

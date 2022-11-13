@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <activitystream>
+            <base_settings>
+                <enable>1</enable>
+                <first_time_load>5000</first_time_load>
+                <time_display>5000</time_display>
+                <time_delay>10000</time_delay>
+                <max_number>5</max_number>
+                <message>people looking this product</message>
+            </base_settings>
+            <advance_settings>
+                <mobile>0</mobile>
+            </advance_settings>
+        </activitystream>
+    </default>
+</config>
