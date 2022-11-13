@@ -1,5 +1,5 @@
 {
-  "name": "pl/activitystream",
+  "name": "phhlinh/ProductNotification-Magento2",
   "description": "Let customers know how many people are seeing this product",
   "require": {
     "php": "~5.5.22|~5.6.0|~7.0.0"
